@@ -65,6 +65,7 @@ pytestdebug.log
 *.swp
 *.swo
 *.swn
+*~
 
 # Backup files
 *.bak
