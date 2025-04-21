@@ -1,0 +1,83 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+db.sqlite3
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Logs
+*.log
+*.out
+*.err
+
+# Media and static files
+/static/
+/media/
+
+# Local settings
+local_settings.py
+
+# IDE and editor files
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.orig
+*.~tmp~
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Environments and config
+.env
+.env.*
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.cache/
+pytestdebug.log
+
+# vim
+# Swap files
+*.swp
+*.swo
+*.swn
+
+# Backup files
+*.bak
+*.tmp
+*.~tmp~
+*.orig
+
+# Undo tree history
+*.un~
+
+# Session files
+Session.vim
+
+# .viminfo files
+.viminfo
+

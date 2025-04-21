@@ -1,0 +1,19 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+import datetime
+
+# Create your views here.
+
+def get_current_time(request):
+
+    current_time = datetime.datetime.now()
+
+    html_string = '<html><body><h1>tik tok motherfucker : %s</h1></body></html>' % current_time
+
+    return HttpResponse(html_string)
+
+
+def get_marketplace(request):
+
+    return render(request,'marketplace.html')
+
