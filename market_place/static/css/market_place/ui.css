@@ -1,0 +1,19 @@
+body{
+    background-image:linear-gradient(#ffecef,#ffd6e0);
+}
+
+/* hero tags */
+#hero-tag-container{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    font-size:100px;
+}
+
+#hero-tag-1{
+    color:#774c60;
+}
+#hero-tag-2{
+    color:#005f56;
+}
+

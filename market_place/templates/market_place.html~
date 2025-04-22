@@ -1,11 +1,36 @@
+{% load static %}
 <html>
     <head>
+
 	<title>workers marketplace</title>
+
+	<link href="{% static 'css/market_place/ui.css' %}" rel='stylesheet' />
+
     </head>
 
     <body>
+	<div id='market_place-body'>
 
-	<h1>Choose a worker for your project!</h1>
+	    <div id='hero-tag-container'>
+		<span id='hero-tag'>Choose a</span>
+		<span id='hero-tag'>worker for</span>
+		<span id='hero-tag'>your project!</span>
+	    </div>
 
+	    <div id='card-body'>
+
+		{% for i in worker_model %}
+
+		<div class='card-container'>
+
+		    <span class='title'>{{i.first_name}}</span>
+
+		    <a class='message-btn'>message</a>
+		</div>
+
+		{% endfor %}
+	    </div>
+
+	</div>
     </body>
 </html>

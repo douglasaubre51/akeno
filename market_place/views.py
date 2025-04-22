@@ -1,6 +1,8 @@
+import datetime
 from django.http import HttpResponse
 from django.shortcuts import render
-import datetime
+
+from .models import User,Worker
 
 # Create your views here.
 
@@ -15,5 +17,11 @@ def get_current_time(request):
 
 def get_market_place(request):
 
-    return render(request,'market_place.html')
+    worker_model = Worker.objects.all().values()
+
+    context = {
+            'worker_model':worker_model
+            }
+
+    return render(request,'market_place.html',context)
 
