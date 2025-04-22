@@ -8,12 +8,12 @@ def get_current_time(request):
 
     current_time = datetime.datetime.now()
 
-    html_string = '<html><body><h1>tik tok motherfucker : %s</h1></body></html>' % current_time
+    html_string = '<html><body><h1>tik tok : %s</h1></body></html>' % current_time
 
     return HttpResponse(html_string)
 
 
-def get_marketplace(request):
+def get_market_place(request):
 
-    return render(request,'marketplace.html')
+    return render(request,'market_place.html')
 
