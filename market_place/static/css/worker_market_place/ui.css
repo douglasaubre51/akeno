@@ -1,0 +1,145 @@
+body {
+    /* reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: #007bff;
+}
+ul{
+    margin:0;
+    padding:5px 10px;
+    list-style-type:none;
+}
+
+/* market_place body */
+#market_place-body {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    width: 100%;
+}
+
+/* hero tags */
+#hero-tag-container {
+    background-color: #f0ffff;
+
+    font-size: 10vw;
+    font-weight: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 30px 10px;
+    height: auto;
+    width: 100%;
+}
+#hero-tag-1 {
+    color: #007bff;
+}
+#hero-tag-2 {
+    color: #ffd700;
+}
+
+/* card body */
+#card-body {
+    user-select:none;
+
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+    gap:30px;
+}
+
+/* card */
+.moat {
+    background-color:#1565c0 ;
+
+    border-radius: 10px;
+    padding: 15px;
+
+    max-width: fit-content;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    justify-content:space-between;
+
+    min-width: 200px;
+    max-width:fit-content;
+
+    min-height: 90%;
+    max-height:fit-content;
+
+    padding: 15px;
+}
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.first-name , .last-name{
+    font-size: 25px;
+    align-self: left;
+}
+.status{
+    font-size:18px;
+}
+.card li span{
+    font-size:15px;
+    padding:0;
+}
+.ratings{
+    font-size:20px;
+}
+
+/* btn container */
+.btn-container{
+    display:flex;
+    justify-content:space-evenly;
+}
+.view-profile-btn{
+    border:2px solid #007bff ;
+    border-radius:7px;
+
+    color:#007bff;
+    padding:3px 10px;
+
+    transition-duration:.5s;
+    cursor:pointer;
+}
+.view-profile-btn:hover{
+    transition-duration:.5s;
+
+    border:2px solid #007bff ;
+    background-color:#007bff;
+    color:white;
+}
+.message-btn{
+    cursor:pointer;
+    transition-duration:.5s;
+
+    border:2px solid #007bff ;
+    background-color:#007bff ;
+    border-radius:7px;
+
+    color:white;
+    padding:3px 10px;
+}
+.message-btn:hover{
+    transition-duration:.5s;
+
+    border:2px solid #007bff ;
+    background-color:white;
+    color:#007bff;
+}

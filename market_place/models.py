@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator,MinValueValidator
+from .choices import Status
 
 # Create your models here.
 
@@ -21,6 +22,13 @@ class User(models.Model):
 
 class Worker(User):
 
-    Ratings = models.DecimalField(max_digits=2,decimal_places=1,blank=True,null=True)
+    ratings = models.DecimalField(max_digits=2,decimal_places=1,blank=True,null=True)
 
+    q1 = models.CharField(max_length=50,blank=True,null=True)
+    q2 = models.CharField(max_length=50,blank=True,null=True)
+    q3 = models.CharField(max_length=50,blank=True,null=True)
+    q4 = models.CharField(max_length=50,blank=True,null=True)
+    q5 = models.CharField(max_length=50,blank=True,null=True)
+
+    status = models.IntegerField(choices=Status.choices,default=Status.READY)
 

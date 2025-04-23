@@ -1,0 +1,71 @@
+{% load static %}
+
+<html>
+    <head>
+	<title>workers marketplace</title>
+
+	<link
+		href="{% static 'css/worker_market_place/ui.css' %}"
+		rel="stylesheet"
+		/>
+    </head>
+
+    <body>
+	<div id="market_place-body">
+	    <div id="hero-tag-container">
+		<span id="hero-tag-1">find workers,</span>
+		<span id="hero-tag-2">build projects!</span>
+	    </div>
+
+	    <!-- cards -->
+	    <div id="card-body">
+		{% for i in worker_model %}
+
+		<div class="moat">
+		    <div class="card">
+
+			<div class="card-details">
+			    <span class="first-name"
+				  >{{i.first_name}} {% if i.middle_name is not None %}
+				  {{i.middle_name}} {% endif %}</span
+			      >
+			      <span class="last-name">{{i.last_name}}</span>
+
+			      <span class="status">{{i.get_status_display}}</span>
+
+			      <ul>
+				  {% if i.q1 %}
+				  <li><span class="q">{{i.q1}}</span></li>
+				  {% endif %} {% if i.q2 %}
+				  <li><span class="q">{{i.q2}}</span></li>
+				  {% endif %} {% if i.q3 %}
+				  <li><span class="q">{{i.q3}}</span></li>
+				  {% endif %} {% if i.q4 %}
+				  <li><span class="q">{{i.q4}}</span></li>
+				  {% endif %} {% if i.q5 %}
+				  <li><span class="q">{{i.q5}}</span></li>
+				  {% endif %}
+			      </ul>
+
+			      <span class="ratings">{{i.ratings}}</span>
+			</div>
+			<!-- card details -->
+
+			<div class="btn-container">
+			    <a class="view-profile-btn">view</a>
+			    <a class="message-btn">message</a>
+			</div>
+			<!-- btn container -->
+
+		    </div>
+		    <!-- card -->
+		</div>
+		<!-- moat -->
+		{% endfor %}
+	    </div>
+	    <!-- card container -->
+
+	</div>
+	<!-- marketplace body -->
+    </body>
+</html>
