@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
         # market place
-        path('',views.get_marketplace),
+        path('',views.get_market_place),
         # current time
         path('time/',views.get_current_time)
         ]
