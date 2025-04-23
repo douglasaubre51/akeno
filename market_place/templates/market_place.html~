@@ -1,11 +1,49 @@
+{% load static %}
 <html>
     <head>
+
 	<title>workers marketplace</title>
+
+	<link href="{% static 'css/market_place/ui.css' %}" rel='stylesheet' />
+
     </head>
 
     <body>
+	<div id='market_place-body'>
 
-	<h1>Choose a worker for your project!</h1>
+	    <div id='hero-tag-container'>
+		<span id='hero-tag-1'>find workers,</span>
+		<span id='hero-tag-2'>build projects!</span>
+	    </div>
 
+	    <!-- cards -->
+	    <div id='card-body'>
+
+		{% for i in worker_model %}
+
+		<div class='moat'>
+		    <div class='card'>
+
+			<div class='image-container'>
+
+			    <img src='{{ i.profile_img.url }}' alt='profile photo' />
+			</div>
+
+			<div class='card-details'>
+
+			    <span class='title'>{{i.first_name}}</span>
+
+			    <div class='btn-container'>
+
+				<a class='view-profile-btn'>view profile</a>
+				<a class='message-btn'>message</a>
+			    </div> <!-- btn container -->
+			</div> <!-- card details -->
+		    </div> <!-- card -->
+		</div> <!-- moat -->
+		{% endfor %}
+	    </div> <!-- card container -->
+
+	</div> <!-- marketplace body -->
     </body>
 </html>
