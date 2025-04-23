@@ -12,25 +12,38 @@
 	<div id='market_place-body'>
 
 	    <div id='hero-tag-container'>
-		<span id='hero-tag-1'>Choose a</span>
-		<span id='hero-tag-1'>worker for</span>
-		<span id='hero-tag-2'>your project!</span>
+		<span id='hero-tag-1'>find workers,</span>
+		<span id='hero-tag-2'>build projects!</span>
 	    </div>
 
+	    <!-- cards -->
 	    <div id='card-body'>
 
 		{% for i in worker_model %}
 
-		<div class='card-container'>
+		<div class='moat'>
+		    <div class='card'>
 
-		    <span class='title'>{{i.first_name}}</span>
+			<div class='image-container'>
 
-		    <a class='message-btn'>message</a>
-		</div>
+			    <img src='{{ i.profile_img.url }}' alt='profile photo' />
+			</div>
 
+			<div class='card-details'>
+
+			    <span class='title'>{{i.first_name}}</span>
+
+			    <div class='btn-container'>
+
+				<a class='view-profile-btn'>view profile</a>
+				<a class='message-btn'>message</a>
+			    </div> <!-- btn container -->
+			</div> <!-- card details -->
+		    </div> <!-- card -->
+		</div> <!-- moat -->
 		{% endfor %}
-	    </div>
+	    </div> <!-- card container -->
 
-	</div>
+	</div> <!-- marketplace body -->
     </body>
 </html>

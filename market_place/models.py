@@ -17,6 +17,7 @@ class User(models.Model):
     state = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
 
+    profile_img = models.ImageField(upload_to = 'images/',blank = True,null = True)
 
 class Worker(User):
 

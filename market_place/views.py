@@ -17,7 +17,7 @@ def get_current_time(request):
 
 def get_market_place(request):
 
-    worker_model = Worker.objects.all().values()
+    worker_model = Worker.objects.all()
 
     context = {
             'worker_model':worker_model
