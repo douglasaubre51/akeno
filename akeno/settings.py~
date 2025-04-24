@@ -138,4 +138,4 @@ MEDIA_URL = '/media/'
 AUTH_USER_MODEL = 'authentication.Account'
 
 # login success redirect
-LOGIN_REDIRECT_URL = '/dashboard/'
+# LOGIN_REDIRECT_URL = '/dashboard/'
