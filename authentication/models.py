@@ -1,18 +1,21 @@
 from django.db import models
+
 from django.core.validators import MaxValueValidator,MinValueValidator
+
+from django.contrib.auth.models import AbstractUser
+
 from .choices import Status
 
 # Create your models here.
 
 
-class User(models.Model):
-
-    first_name = models.CharField(max_length=50)
-    middle_name = models.CharField(max_length=50,blank=True,null=True)
-    last_name = models.CharField(max_length=50)
+class Account(AbstractUser):
+    
+    class Meta:
+        verbose_name = 'Account'
+        verbose_name_plural = 'Accounts'
 
     phone_no = models.CharField(max_length=12)
-    email_id = models.EmailField(unique=True)
 
     place = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
@@ -20,7 +23,11 @@ class User(models.Model):
 
     profile_img = models.ImageField(upload_to = 'images/',blank = True,null = True)
 
-class Worker(User):
+class Worker(Account):
+    
+    class Meta:
+        verbose_name = 'Worker'
+        verbose_name_plural = 'Workers'
 
     ratings = models.DecimalField(max_digits=2,decimal_places=1,blank=True,null=True)
 

@@ -1,0 +1,20 @@
+<html>
+    <head>
+	<title>Login now!</title>
+    </head>
+
+    <body>
+
+	<h1>Login !</h1>
+
+	<form method=post>
+
+	    {% csrf_token %}
+	    {{ form }}
+
+	    <button type='submit'>log in</button>
+
+	</form>
+
+    </body>
+</html>
