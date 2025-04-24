@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'django_browser_reload',
     'market_place',
     'authentication'
@@ -60,6 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            # base dir for LoginView registration templates
             BASE_DIR / 'templates'
             ],
         'APP_DIRS': True,
@@ -129,10 +131,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # setup for image uploads
-
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-# authentication
+# authentication user model
 AUTH_USER_MODEL = 'authentication.Account'
 
+# login success redirect
+LOGIN_REDIRECT_URL = '/dashboard/'
