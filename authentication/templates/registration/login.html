@@ -1,0 +1,23 @@
+<html>
+    <head>
+	<title>Login now!</title>
+    </head>
+
+    <body>
+
+	<h1>Login</h1>
+
+	<form method=post>
+
+	    {% csrf_token %}
+	    {{ form }}
+
+	    <button type='submit'>log in</button>
+	    <button type='reset'>clear</button>
+
+	    <a href='/signup'>new to akeno? click here to create a new account!</a>
+
+	</form>
+
+    </body>
+</html>

@@ -2,7 +2,7 @@ import datetime
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import User,Worker
+from authentication.models import Account,Worker
 
 # Create your views here.
 
