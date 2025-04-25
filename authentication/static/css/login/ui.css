@@ -11,6 +11,12 @@ body{
     color:#c0c0c0;
 }
 
+form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
 a{
     text-decoration:none;
 
@@ -20,12 +26,12 @@ a{
 
 button[type='submit']{
     background-color:#c0c0c0;
-    color:whitesmoke;
+    color:black;
 
     font-family:cursive;
 
     border:1px solid #c0c0c0;
-    border-radius:10px;
+    border-radius:5px;
 
     padding:5px 10px;
 
@@ -35,12 +41,12 @@ button[type='submit']{
 }
 
 button[type='submit']:hover{
-    background-color:whitesmoke;
+    background:transparent;
     color:#c0c0c0;
 
     font-family:cursive;
 
-    border:1px solid whitesmoke;
+    border:1px solid #c0c0c0;
 
     transition-duration:.2s;
 }
@@ -51,7 +57,7 @@ button[type='reset']{
     font-family:cursive;
 
     border:1px solid red;
-    border-radius:10px;
+    border-radius:5px;
 
     color:red;
 
@@ -98,6 +104,7 @@ button[type='reset']:hover{
     align-items:center;
     justify-self:center;
 
+
     min-width:500px;
     min-height:300px;
 }
@@ -105,33 +112,31 @@ button[type='reset']:hover{
     color:#c0c0c0;
 }
 
-.form-body{
-    display:flex;
-    flex-direction:column;
-    gap:40px;
-}
+/* to center the input text's */
 .form-body p{
     justify-self:center;
 }
 
+.btn-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 .btn-container{
-    justify-self:center;
-
     display:flex;
     flex-direction:row;
 
-    justify-content:space-evenly;
+    justify-content:center;
 
     gap:30px;
 }
 
 .signup-container{
     width:100%;
-    margin-top:35px;
 
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:5px;
 
     align-items:center;
 }
