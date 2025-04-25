@@ -1,24 +1,39 @@
+{% load static %}
+
 <html>
     <head>
+
 	<title>Login now!</title>
+
+	<link rel='stylesheet' href="{% static 'css/login/ui.css' %}" />
     </head>
 
     <body>
 
-	<h1>Login</h1>
+	<div class='login-body'>
 
-	<form method=post>
+	    <h1>Login</h1>
 
-	    {% csrf_token %}
-	    {{ form }}
+	    <div class='form-body'>
+		<form method=post>
+		    {% csrf_token %}
 
-	    <button type='submit'>log in</button>
-	    <button type='reset'>clear</button>
+		    <div class='form-container'>{{ form.as_p }}</div>
 
-	    <a href='/signup'>new to akeno? click here to create a new account!</a>
-	    <a href='/worker-signup'>need a job? click here to create a new worker account!</a>
+		    <div class='btn-container'>
+			<button type='submit'>log in</button>
+			<button type='reset'>clear</button>
+		    </div> <!-- btn container -->
 
-	</form>
+		    <div class='signup-container'>
+			<a href='/signup'>new to akeno? click here to create a new account!</a>
+			<a href='/worker-signup'>need a job? click here to create a new worker account!</a>
+		    </div> <!-- signup container -->
+
+		</form>
+	    </div> <!-- form body -->
+
+	</div> <!-- login body -->
 
     </body>
 </html>
