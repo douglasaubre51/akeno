@@ -117,13 +117,16 @@ button[type='reset']:hover{
     justify-self:center;
 }
 
+.btn-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 .btn-container{
-    justify-self:center;
-
     display:flex;
     flex-direction:row;
 
-    justify-content:space-around;
+    justify-content:center;
 
     gap:30px;
 }
