@@ -1,12 +1,36 @@
+{% load static %}
 <html>
     <head>
+
 	<title>{{username}}'s dashboard</title>
+
+	<link rel='stylesheet' href="{% static 'css/dashboard/ui.css' %}" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
+	<div id='main'>
 
-	<h1>Welcome {{username}},</h1>
-	<h1>get started!</h1>
+	    <div id='lhs'>
+		<div id='heading-tag-container'>
+		    <span>Welcome {{username}}</span>
+		</div> <!-- heading tag container -->
 
+		<div id='content-container'>
+		</div> <!-- content container -->
+	    </div> <!-- lhs -->
+
+	    <div id='rhs'>
+		<div id='notification-container'>
+
+		    <span>Notification Center</span>
+
+		</div> <!-- notification container -->
+	    </div> <!-- rhs -->
+
+	</div> <!-- main -->
     </body>
 </html>
