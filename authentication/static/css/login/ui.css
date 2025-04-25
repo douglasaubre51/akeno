@@ -1,0 +1,137 @@
+body{
+    margin:0;
+    padding:0;
+
+    background-image:url('../../images/code-board.jpg');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    background-size:auto;
+
+    color:#c0c0c0;
+}
+
+a{
+    text-decoration:none;
+
+    font-size:12px;
+    color:teal;
+}
+
+button[type='submit']{
+    background-color:#c0c0c0;
+    color:whitesmoke;
+
+    font-family:cursive;
+
+    border:1px solid #c0c0c0;
+    border-radius:10px;
+
+    padding:5px 10px;
+
+    transition-duration:.2s;
+
+    cursor:pointer;
+}
+
+button[type='submit']:hover{
+    background-color:whitesmoke;
+    color:#c0c0c0;
+
+    font-family:cursive;
+
+    border:1px solid whitesmoke;
+
+    transition-duration:.2s;
+}
+
+button[type='reset']{
+    background:transparent;
+
+    font-family:cursive;
+
+    border:1px solid red;
+    border-radius:10px;
+
+    color:red;
+
+    padding:5px 10px;
+
+    transition-duration:.2s;
+
+    cursor:pointer;
+}
+button[type='reset']:hover{
+    background-color:red;
+
+    border:1px solid red;
+
+    color:white;
+}
+
+#id_username,#id_password{
+    outline:none;
+
+    border:none;
+    border-bottom:1px solid black;
+
+    background-color:transparent;
+
+    color:#c0c0c0;
+}
+
+.login-body{
+    user-select:none;
+
+    padding:10px;
+
+    background-color:rgba(255,255,255,.1);
+    backdrop-filter:blur(30px);
+
+    border-radius:10px;
+
+    margin-top:60px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-self:center;
+
+    min-width:500px;
+    min-height:300px;
+}
+.login-body h1{
+    color:#c0c0c0;
+}
+
+.form-body{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+.form-body p{
+    justify-self:center;
+}
+
+.btn-container{
+    justify-self:center;
+
+    display:flex;
+    flex-direction:row;
+
+    justify-content:space-evenly;
+
+    gap:30px;
+}
+
+.signup-container{
+    width:100%;
+    margin-top:35px;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    align-items:center;
+}

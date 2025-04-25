@@ -2,7 +2,7 @@ import datetime
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import User,Worker
+from .models import Account,Worker
 
 # Create your views here.
 
@@ -23,5 +23,5 @@ def get_worker_market_place(request):
             'worker_model':worker_model
             }
 
-    return render(request,'market_place.html',context)
+    return render(request,'worker_market_place.html',context)
 
