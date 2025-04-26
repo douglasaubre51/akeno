@@ -29,7 +29,9 @@ urlpatterns = [
         path('market_place/',include('market_place.urls')),
 
         # login
-        path('',include('authentication.urls'))
+        path('',include('authentication.urls')),
 
+        # dashboard
+        path('dashboard/',include('dashboard.urls'))
          
         ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
