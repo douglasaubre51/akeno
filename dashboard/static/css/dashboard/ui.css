@@ -3,6 +3,7 @@
     margin:0;
 
     box-sizing:border-box;
+    user-select:none;
 }
 
 body{
@@ -22,6 +23,7 @@ body{
     backdrop-filter:blur(100px);
 }
 
+/* content side */
 #lhs{
     display:flex;
     flex-direction:column;
@@ -44,16 +46,33 @@ body{
     font-style:normal;
     font-optical-sizing:auto;
 }
+/* contents */
 #content-container{
     background-color:#3b3b3b;
 
-    padding:20px 30px;
+    padding:10px 20px;
     border-radius:10px;
 
     min-height:570px;
     box-shadow:0px 1px 40px 1px rgba(0,0,0,0.5);
 }
+/* content navbar */
+#content-navbar{
+    display:flex;
+    flex-direction:row;
 
+    gap:40px;
+}
+#workers-btn,#projects-btn{
+    padding:10px;
+}
+.active-nav-btn{
+    border-bottom:1px solid whitesmoke;
+    color:white;
+}
+
+
+/* notifications side */
 #rhs{
     background-color:#333333;
     min-height:100vh;

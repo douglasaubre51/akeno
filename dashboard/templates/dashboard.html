@@ -5,6 +5,7 @@
 	<title>{{username}}'s dashboard</title>
 
 	<link rel='stylesheet' href="{% static 'css/dashboard/ui.css' %}" />
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -20,17 +21,27 @@
 		</div> <!-- heading tag container -->
 
 		<div id='content-container'>
+			<!-- content navigation -->
+			<div id='content-navbar'>
+			    <a id='workers-btn'>workers</a>
+			    <a id='projects-btn'>projects</a>
+			</div>
+
 		</div> <!-- content container -->
+
 	    </div> <!-- lhs -->
 
 	    <div id='rhs'>
 		<div id='notification-container'>
+		    <span>Notification Center</span> 
 
-		    <span>Notification Center</span>
+		    <!-- notifications! -->
 
 		</div> <!-- notification container -->
 	    </div> <!-- rhs -->
 
 	</div> <!-- main -->
     </body>
+
+    <script src='{% static 'js/dashboard/ui.js' %}'></script>
 </html>
