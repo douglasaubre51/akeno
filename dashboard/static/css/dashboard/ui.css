@@ -7,10 +7,10 @@
 }
 
 body{
-    /* paradise pink */
-    background-color:#ff4f81;
-
+    /* mint green */
+    background-color:rgba(152,255,152,.3);
     color:#333333;
+
     font-family:"Roboto Mono",monospace;
 }
 
@@ -36,8 +36,7 @@ body{
 
 /* heading text */
 #heading-tag-container span{
-    text-shadow:0px 0px 10px rgba(0,0,0,.2);
-    color:white;
+    color:black;
 
     font-size:60px;
     font-style:normal;
@@ -46,12 +45,10 @@ body{
 
 /* contents card */
 #content-container{
-    background-color:rgba(255,255,255,0.2);
+    background-color:whitesmoke;
     box-shadow:0px 1px 10px 1px rgba(0,0,0,0.2);
-    backdrop-filter:blur(100px);
 
     padding:10px 20px;
-
     border-radius:10px;
 
     min-height:570px;
@@ -71,17 +68,16 @@ body{
     cursor:pointer;
 }
 .active-nav-btn{
-    border-bottom:1px solid whitesmoke;
-    color:white;
+    border-bottom:1px solid green;
+    color:green;
 }
 
 
 /* notifications side */
 #rhs{
     color:black;
-    background-color:rgba(255,255,255,.2);
+    background-color:whitesmoke;
     box-shadow:0px 1px 10px 1px rgba(0,0,0,0.2);
-    backdrop-filter:blur(100px);
 
     flex:1;
 
