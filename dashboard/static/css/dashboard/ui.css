@@ -14,6 +14,11 @@ body{
     font-family:"Roboto Mono",monospace;
 }
 
+a{
+    color:white;
+    text-decoration:none;
+}
+
 /* main page layout */
 #main{
     display:flex;
@@ -41,6 +46,23 @@ body{
     font-size:60px;
     font-style:normal;
     font-optical-sizing:auto;
+}
+
+/* marketplace btn */
+#goto-marketplace-btn{
+    padding:10px;
+    border-radius:5px;
+
+    background-color:green;
+    border:1px solid green;
+
+    width:fit-content;
+    transition-duration:.2s;
+}
+#goto-marketplace-btn:hover{
+    background-color:white;
+    color:green;
+    border:1px solid green;
 }
 
 /* contents card */
