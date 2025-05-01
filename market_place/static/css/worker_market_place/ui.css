@@ -4,7 +4,9 @@ body {
     padding: 0;
     box-sizing: border-box;
 
-    background-color: #007bff;
+    background-color: black;
+
+    font-family:"Roboto Mono";
 }
 ul{
     margin:0;
@@ -16,31 +18,51 @@ ul{
 #market_place-body {
     display: flex;
     flex-direction: column;
-    gap: 60px;
 
     width: 100%;
 }
 
 /* hero tags */
 #hero-tag-container {
-    background-color: #f0ffff;
+    background-image:url('../../images/rack-server.jpg');
+    background-size:cover;
+    background-position:center;
+    background-attachment:auto;
 
-    font-size: 10vw;
-    font-weight: 100vw;
+    font-size: 40px;
+    font-weight: 890;
 
     display: flex;
     flex-direction: column;
     gap: 20px;
 
-    padding: 30px 10px;
-    height: auto;
+    justify-content:flex-end;
+
+    height: 400px;
     width: 100%;
+
+}
+#hero-tags{
+    width:fit-content;
+    padding:30px 20px;
+    border-top-right-radius:10px;
+
+    font-size:80px;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+    min-width:900px;
+}
+#hero-tags span{
+    text-shadow:0px 5px 10px rgba(0,0,0,1);
 }
 #hero-tag-1 {
-    color: #007bff;
+    color: whitesmoke;
 }
 #hero-tag-2 {
-    color: #ffd700;
+    color: #007bff;
 }
 
 /* card body */
@@ -53,21 +75,28 @@ ul{
     grid-template-columns: auto auto auto auto;
 
     gap:30px;
+
+    background-image:linear-gradient(to top,black 70%,rgba(255,255,255,.155));
 }
 
 /* card */
 .moat {
-    background-color:#1565c0 ;
+    background-color:inherit ;
 
-    border-radius: 10px;
+    backdrop-filter:blur(10px);
+
+    border-radius: 3px;
     padding: 15px;
 
     max-width: fit-content;
 }
 
 .card {
-    background-color: white;
-    border-radius: 10px;
+    background-color: rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    border-radius: 15px;
+
+    box-shadow:0px 1px 10px 3px black;
 
     display: flex;
     flex-direction: column;
@@ -81,12 +110,14 @@ ul{
     min-height: 90%;
     max-height:fit-content;
 
-    padding: 15px;
+    padding: 25px;
+
+    color:lightgrey;
 }
 .card-details {
     display: flex;
     flex-direction: column;
-    gap:5px;
+    gap:10px;
 }
 .first-name , .last-name{
     font-size: 25px;
@@ -106,40 +137,34 @@ ul{
 /* btn container */
 .btn-container{
     display:flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
 }
 .view-profile-btn{
-    border:2px solid #007bff ;
-    border-radius:7px;
+    border:1px solid #007bff ;
+    border-radius:10px;
 
     color:#007bff;
-    padding:3px 10px;
+    padding:5px 13px;
 
-    transition-duration:.5s;
+    transition-duration:.2s;
     cursor:pointer;
 }
 .view-profile-btn:hover{
-    transition-duration:.5s;
-
-    border:2px solid #007bff ;
     background-color:#007bff;
-    color:white;
+    color:lightgrey;
 }
 .message-btn{
     cursor:pointer;
-    transition-duration:.5s;
+    transition-duration:.2s;
 
-    border:2px solid #007bff ;
-    background-color:#007bff ;
-    border-radius:7px;
+    border:1px solid #007bff ;
+    background-color:inherit ;
+    border-radius:10px;
 
-    color:white;
-    padding:3px 10px;
+    color:#007bff;
+    padding:5px 13px;
 }
 .message-btn:hover{
-    transition-duration:.5s;
-
-    border:2px solid #007bff ;
-    background-color:white;
-    color:#007bff;
+    background-color:#007bff;
+    color:lightgrey;
 }
