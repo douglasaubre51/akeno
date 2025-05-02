@@ -7,11 +7,16 @@ body {
   background-color: black;
 
   font-family: "Roboto Mono";
+
+  user-select:none;
 }
 ul {
   margin: 0;
   padding: 5px 10px;
   list-style-type: none;
+}
+a{
+  text-decoration:none;
 }
 
 /* market_place body */
@@ -119,7 +124,6 @@ ul {
 }
 .card li span {
   font-size: 15px;
-  padding: 0;
 }
 .ratings {
   font-size: 20px;
@@ -131,7 +135,6 @@ ul {
   justify-content: space-between;
 }
 .view-profile-btn {
-  border: 1px solid #007bff;
   border-radius: 10px;
 
   color: #007bff;
@@ -148,7 +151,6 @@ ul {
   cursor: pointer;
   transition-duration: 0.2s;
 
-  border: 1px solid #007bff;
   background-color: inherit;
   border-radius: 10px;
 
