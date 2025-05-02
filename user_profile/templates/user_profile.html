@@ -1,0 +1,12 @@
+{% load static %}
+<html>
+  <head>
+    <title>{{id}}</title>
+  </head>
+
+  <body>
+    <img src="{{user.profile_img.url}}" />
+
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+  </body>
+</html>

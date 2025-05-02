@@ -1,146 +1,146 @@
-body{
-    margin:0;
-    padding:0;
+body {
+  margin: 0;
+  padding: 0;
 
-    background-image:url('../../images/code-board.jpg');
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    background-position:center;
-    background-size:auto;
+  background-image: url("../../images/code-board.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: auto;
 
-    color:#c0c0c0;
+  color: #c0c0c0;
 }
 
-form{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-a{
-    text-decoration:none;
+a {
+  text-decoration: none;
 
-    font-size:12px;
-    color:teal;
+  font-size: 12px;
+  color: teal;
 }
-a:hover{
-    color:yellow;
-}
-
-button[type='submit']{
-    background-color:#c0c0c0;
-    color:black;
-
-    font-family:cursive;
-
-    border:1px solid #c0c0c0;
-    border-radius:5px;
-
-    padding:5px 10px;
-
-    transition-duration:.2s;
-
-    cursor:pointer;
+a:hover {
+  color: yellow;
 }
 
-button[type='submit']:hover{
-    background:green;
-    color:white;
+button[type="submit"] {
+  background-color: #c0c0c0;
+  color: black;
 
-    font-family:cursive;
+  font-family: cursive;
 
-    border:1px solid green;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
 
-    transition-duration:.2s;
+  padding: 5px 10px;
+
+  transition-duration: 0.2s;
+
+  cursor: pointer;
 }
 
-button[type='reset']{
-    background:transparent;
+button[type="submit"]:hover {
+  background: green;
+  color: white;
 
-    font-family:cursive;
+  font-family: cursive;
 
-    border:1px solid #c0c0c0;
-    border-radius:5px;
+  border: 1px solid green;
 
-    color:#c0c0c0;
-
-    padding:5px 10px;
-
-    transition-duration:.2s;
-
-    cursor:pointer;
-}
-button[type='reset']:hover{
-    background-color:red;
-
-    border:1px solid red;
-
-    color:white;
+  transition-duration: 0.2s;
 }
 
-#id_username,#id_password{
-    outline:none;
+button[type="reset"] {
+  background: transparent;
 
-    border:none;
-    border-bottom:1px solid black;
+  font-family: cursive;
 
-    background-color:transparent;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
 
-    color:#c0c0c0;
+  color: #c0c0c0;
+
+  padding: 5px 10px;
+
+  transition-duration: 0.2s;
+
+  cursor: pointer;
+}
+button[type="reset"]:hover {
+  background-color: red;
+
+  border: 1px solid red;
+
+  color: white;
 }
 
-.login-body{
-    user-select:none;
+#id_username,
+#id_password {
+  outline: none;
 
-    padding:10px;
+  border: none;
+  border-bottom: 1px solid black;
 
-    background-color:rgba(255,255,255,.1);
-    backdrop-filter:blur(30px);
+  background-color: transparent;
 
-    border-radius:10px;
-
-    margin-top:60px;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-self:center;
-
-
-    min-width:500px;
-    min-height:300px;
+  color: #c0c0c0;
 }
-.login-body h1{
-    color:#c0c0c0;
+
+.login-body {
+  user-select: none;
+
+  padding: 10px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+
+  border-radius: 10px;
+
+  margin-top: 60px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-self: center;
+
+  min-width: 500px;
+  min-height: 300px;
+}
+.login-body h1 {
+  color: #c0c0c0;
 }
 
 /* to center the input text's */
-.form-body p{
-    justify-self:center;
+.form-body p {
+  justify-self: center;
 }
 
-.btn-box{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+.btn-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.btn-container{
-    display:flex;
-    flex-direction:row;
+.btn-container {
+  display: flex;
+  flex-direction: row;
 
-    justify-content:center;
+  justify-content: center;
 
-    gap:30px;
+  gap: 30px;
 }
 
-.signup-container{
-    margin-top:30px;
+.signup-container {
+  margin-top: 30px;
 
-    width:100%;
+  width: 100%;
 
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-    align-items:center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
 }

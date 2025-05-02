@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'market_place',
     'authentication',
-    'dashboard'
+    'dashboard',
+    'user_profile'
+
 ]
 
 MIDDLEWARE = [
