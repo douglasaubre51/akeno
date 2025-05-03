@@ -1,0 +1,36 @@
+{% extends 'worker_market_place.html' %} {% block content %} {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/user_profile/ui.css' %}" />
+
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<div id="user-profile-body">
+  <a href="/market_place"
+    ><i id="arrow-back" class="material-icons">arrow_back</i></a
+  >
+
+  <img id="profile-img" src="{{user.profile_img.url}}" loading="lazy" />
+
+  <div id="user-details-container">
+    <div id="details-container">
+      <h1>{{user.first_name}} {{user.last_name}}</h1>
+
+      <ul id="qualifications">
+        <li>{%if user.q1 is not None %} {{user.q1}} {% endif %}</li>
+        <li>{%if user.q2 is not None %} {{user.q2}} {% endif %}</li>
+        <li>{%if user.q3 is not None %} {{user.q3}} {% endif %}</li>
+        <li>{%if user.q4 is not None %} {{user.q4}} {% endif %}</li>
+        <li>{%if user.q5 is not None %} {{user.q5}} {% endif %}</li>
+      </ul>
+    </div>
+    <!-- details -->
+  </div>
+  <!-- user details container -->
+</div>
+<!-- user profile body -->
+
+<script src="{% static 'js/user_profile/ui.js' %}"></script>
+
+{% endblock %}

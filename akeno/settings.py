@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'market_place',
     'authentication',
-    'dashboard'
+    'dashboard',
+    'user_profile'
+
 ]
 
 MIDDLEWARE = [
@@ -63,7 +65,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             # base dir for LoginView registration templates
-            BASE_DIR / 'templates'
+            BASE_DIR / 'templates',
+            BASE_DIR / 'user_profile/templates'
             ],
         'APP_DIRS': True,
         'OPTIONS': {

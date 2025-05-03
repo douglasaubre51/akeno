@@ -1,116 +1,114 @@
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
-    user-select:none;
+  user-select: none;
 }
 
-body{
-    /* mint green */
-    background-color:rgba(152,255,152,.3);
-    color:#333333;
+body {
+  /* mint green */
+  background-color: rgba(152, 255, 152, 0.3);
+  color: #333333;
 
-    font-family:"Roboto Mono",monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
-a{
-    color:white;
-    text-decoration:none;
+a {
+  color: white;
+  text-decoration: none;
 }
 
 /* main page layout */
-#main{
-    display:flex;
-    flex-direction:row;
-    gap:10px;
+#main {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
-
 /* content side */
-#lhs{
-    display:flex;
-    flex-direction:column;
-    gap:30px;
+#lhs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
-    height:fit-content;
-    min-width:950px;
+  height: fit-content;
+  min-width: 950px;
 
-    padding:20px 30px; 
+  padding: 20px 30px;
 }
 
 /* heading text */
-#heading-tag-container span{
-    color:black;
+#heading-tag-container span {
+  color: black;
 
-    font-size:60px;
-    font-style:normal;
-    font-optical-sizing:auto;
+  font-size: 60px;
+  font-style: normal;
+  font-optical-sizing: auto;
 }
 
 /* marketplace btn */
-#goto-marketplace-btn{
-    padding:10px;
-    border-radius:5px;
+#goto-marketplace-btn {
+  padding: 10px;
+  border-radius: 5px;
 
-    background-color:green;
-    border:1px solid green;
+  background-color: green;
+  border: 1px solid green;
 
-    width:fit-content;
-    transition-duration:.2s;
+  width: fit-content;
+  transition-duration: 0.2s;
 }
-#goto-marketplace-btn:hover{
-    background-color:white;
-    color:green;
-    border:1px solid green;
+#goto-marketplace-btn:hover {
+  background-color: white;
+  color: green;
+  border: 1px solid green;
 }
 
 /* contents card */
-#content-container{
-    background-color:whitesmoke;
-    box-shadow:0px 1px 10px 1px rgba(0,0,0,0.2);
+#content-container {
+  background-color: whitesmoke;
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
 
-    padding:10px 20px;
-    border-radius:10px;
+  padding: 10px 20px;
+  border-radius: 10px;
 
-    min-height:570px;
+  min-height: 570px;
 }
 
 /* content navbar */
-#content-navbar{
-    display:flex;
-    flex-direction:row;
-    gap:40px;
+#content-navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 }
 
 /* tab btns */
-#workers-btn,#projects-btn{
-    padding:10px;
+#workers-btn,
+#projects-btn {
+  padding: 10px;
 
-    cursor:pointer;
+  cursor: pointer;
 }
-.active-nav-btn{
-    border-bottom:1px solid green;
-    color:green;
+.active-nav-btn {
+  border-bottom: 1px solid green;
+  color: green;
 }
-
 
 /* notifications side */
-#rhs{
-    color:black;
-    background-color:whitesmoke;
-    box-shadow:0px 1px 10px 1px rgba(0,0,0,0.2);
+#rhs {
+  color: black;
+  background-color: whitesmoke;
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
 
-    flex:1;
+  flex: 1;
 
-    min-height:100vh;
-    min-width:fit-content;
-
+  min-height: 100vh;
+  min-width: fit-content;
 }
 
 /* notification card */
-#notification-container{
-    padding:10px 20px;
+#notification-container {
+  padding: 10px 20px;
 
-    color:light-grey;
+  color: light-grey;
 }
