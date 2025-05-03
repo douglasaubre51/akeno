@@ -1,24 +1,18 @@
 <html>
-    <head>
+  <head>
+    <title>worker sign up</title>
+  </head>
 
-	<title>worker sign up</title>
+  <body>
+    <h1>Create new worker account</h1>
 
-    </head>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
 
-    <body>
+      <button type="submit">create</button>
+      <button type="reset">clear</button>
 
-	<h1>Create new worker account</h1>
-
-	<form method=post>
-
-	    {% csrf_token %}
-	    {{ form.as_p }}
-
-	    <button type='submit'>create</button>
-	    <button type='reset'>clear</button>
-
-	    <a href='/'>back to login</a>
-	</form>
-
-    </body>
+      <a href="/">back to login</a>
+    </form>
+  </body>
 </html>

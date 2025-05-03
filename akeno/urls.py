@@ -32,6 +32,9 @@ urlpatterns = [
         path('',include('authentication.urls')),
 
         # dashboard
-        path('dashboard/',include('dashboard.urls'))
+        path('dashboard/',include('dashboard.urls')),
+
+        # user profile
+        path('user_profile/',include('user_profile.urls'))
          
         ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
