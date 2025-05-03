@@ -66,7 +66,7 @@ TEMPLATES = [
         'DIRS': [
             # base dir for LoginView registration templates
             BASE_DIR / 'templates',
-            'user_profile'
+            BASE_DIR / 'user_profile/templates'
             ],
         'APP_DIRS': True,
         'OPTIONS': {

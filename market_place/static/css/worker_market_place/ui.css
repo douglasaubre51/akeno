@@ -19,9 +19,6 @@ a {
   text-decoration: none;
 }
 
-#main-layout {
-}
-
 /* market_place body */
 #market_place-body {
   display: flex;
@@ -57,8 +54,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  min-width: 900px;
 }
 #hero-tags span {
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 1);
@@ -79,13 +74,15 @@ a {
   display: grid;
   grid-template-columns: auto auto auto auto;
 
-  gap: 30px;
+  gap: 60px;
 
   background-image: linear-gradient(
     to top,
     black 70%,
     rgba(255, 255, 255, 0.155)
   );
+
+  overflow: hidden;
 }
 
 /* card */
@@ -98,7 +95,6 @@ a {
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
 
   justify-content: space-between;
 
@@ -168,7 +164,7 @@ a {
 #user-profile {
   position: absolute;
   right: 0;
-  height: 100vh;
+  min-height: 100vh;
   min-width: 30%;
 
   padding: 20px;
