@@ -24,4 +24,3 @@ def get_worker_market_place(request):
             }
 
     return render(request,'worker_market_place.html',context)
-

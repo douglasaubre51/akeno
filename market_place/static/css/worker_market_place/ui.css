@@ -8,15 +8,18 @@ body {
 
   font-family: "Roboto Mono";
 
-  user-select:none;
+  user-select: none;
 }
 ul {
   margin: 0;
   padding: 5px 10px;
   list-style-type: none;
 }
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
+}
+
+#main-layout {
 }
 
 /* market_place body */
@@ -160,4 +163,15 @@ a{
 .message-btn:hover {
   background-color: #007bff;
   color: lightgrey;
+}
+
+#user-profile {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  min-width: 30%;
+
+  padding: 20px;
+  color: lightgrey;
+  backdrop-filter: blur(15px);
 }

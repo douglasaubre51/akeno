@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: lightgrey;
+}
+
+i {
+  cursor: pointer;
+}
+i:hover {
+  color: white;
+}
+
+img {
+  width: 100%;
+  height: 250px;
+
+  border-radius: 15px;
+}
+
+#user-profile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#qualifications {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

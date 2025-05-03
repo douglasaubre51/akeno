@@ -65,7 +65,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             # base dir for LoginView registration templates
-            BASE_DIR / 'templates'
+            BASE_DIR / 'templates',
+            'user_profile'
             ],
         'APP_DIRS': True,
         'OPTIONS': {
