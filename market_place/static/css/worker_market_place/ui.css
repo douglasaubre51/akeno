@@ -19,6 +19,19 @@ a {
   text-decoration: none;
 }
 
+#goto-dashboard{
+  position:absolute;
+  left:20px;
+  top:20px;
+
+  color:lightgrey;
+  font-size:30px;
+}
+#goto-dashboard:hover{
+  color:white;
+  cursor:pointer;
+}
+
 /* market_place body */
 #market_place-body {
   display: flex;

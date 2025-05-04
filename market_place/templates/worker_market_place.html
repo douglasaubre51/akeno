@@ -5,67 +5,77 @@
     <title>workers marketplace</title>
 
     <link
-      href="{% static 'css/worker_market_place/ui.css' %}"
-      rel="stylesheet"
-    />
+	href="{% static 'css/worker_market_place/ui.css' %}"
+	rel="stylesheet"
+	/>
+
+    <link
+	href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet"
+	/>
+
   </head>
 
   <body>
+
     <div id="user-profile">{% block content %} {% endblock %}</div>
 
     <!-- user profile -->
     <div id="market_place-body">
+
       <div id="hero-tag-container">
-        <div id="hero-tags">
-          <span id="hero-tag-1">find workers,</span>
-          <span id="hero-tag-2">build projects!</span>
-        </div>
+	<a href='/dashboard'><i id='goto-dashboard' class='material-icons'>arrow_back</i></a>
+
+	<div id="hero-tags">
+	  <span id="hero-tag-1">find workers,</span>
+	  <span id="hero-tag-2">build projects!</span>
+	</div>
       </div>
 
       <!-- cards -->
       <div id="card-body">
-        {% for i in worker_model %}
+	{% for i in worker_model %}
 
-        <div class="card">
-          <div class="card-details">
-            <span class="first-name">
-              {{i.first_name}} {% if i.middle_name is not None %}
-              {{i.middle_name}} {% endif %}
-            </span>
-            <span class="last-name">{{i.last_name}}</span>
+	<div class="card">
+	  <div class="card-details">
+	    <span class="first-name">
+	      {{i.first_name}} {% if i.middle_name is not None %}
+	      {{i.middle_name}} {% endif %}
+	    </span>
+	    <span class="last-name">{{i.last_name}}</span>
 
-            <span class="status">{{i.get_status_display}}</span>
+	    <span class="status">{{i.get_status_display}}</span>
 
-            <ul>
-              {% if i.q1 %}
-              <li><span class="q">{{i.q1}}</span></li>
-              {% endif %} {% if i.q2 %}
-              <li><span class="q">{{i.q2}}</span></li>
-              {% endif %} {% if i.q3 %}
-              <li><span class="q">{{i.q3}}</span></li>
-              {% endif %} {% if i.q4 %}
-              <li><span class="q">{{i.q4}}</span></li>
-              {% endif %} {% if i.q5 %}
-              <li><span class="q">{{i.q5}}</span></li>
-              {% endif %}
-            </ul>
+	    <ul>
+	      {% if i.q1 %}
+	      <li><span class="q">{{i.q1}}</span></li>
+	      {% endif %} {% if i.q2 %}
+	      <li><span class="q">{{i.q2}}</span></li>
+	      {% endif %} {% if i.q3 %}
+	      <li><span class="q">{{i.q3}}</span></li>
+	      {% endif %} {% if i.q4 %}
+	      <li><span class="q">{{i.q4}}</span></li>
+	      {% endif %} {% if i.q5 %}
+	      <li><span class="q">{{i.q5}}</span></li>
+	      {% endif %}
+	    </ul>
 
-            <span class="ratings"
-              >{% if i.ratings %} {{i.ratings}} {% endif %}</span
-            >
-          </div>
-          <!-- card details -->
+	    <span class="ratings"
+		  >{% if i.ratings %} {{i.ratings}} {% endif %}</span
+		>
+	  </div>
+	      <!-- card details -->
 
-          <div class="btn-container">
-            <a class="view-profile-btn" href="../user_profile/{{i.id}}/">
-              view
-            </a>
-            <a class="message-btn">message</a>
-          </div>
-          <!-- btn container -->
-        </div>
-        <!-- card -->
-        {% endfor %}
+	      <div class="btn-container">
+		<a class="view-profile-btn" href="../user_profile/{{i.id}}/">
+		  view
+		</a>
+		<a class="message-btn">message</a>
+	      </div>
+	      <!-- btn container -->
+	</div>
+	<!-- card -->
+	{% endfor %}
       </div>
       <!-- card container -->
     </div>
