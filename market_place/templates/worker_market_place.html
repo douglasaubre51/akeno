@@ -39,8 +39,11 @@
 	<div class="card">
 	  <div class="card-details">
 	    <span class="first-name">
-	      {{i.first_name}} {% if i.middle_name is not None %}
-	      {{i.middle_name}} {% endif %}
+	      {{i.first_name}} 
+
+	      {% if i.middle_name is not None %}
+	      {{i.middle_name}} 
+	      {% endif %}
 	    </span>
 	    <span class="last-name">{{i.last_name}}</span>
 
@@ -67,10 +70,18 @@
 	      <!-- card details -->
 
 	      <div class="btn-container">
-		<a class="view-profile-btn" href="../user_profile/{{i.id}}/">
-		  view
+		<a 
+		   class="view-profile-btn" 
+		   href="../user_profile/{{i.id}}/"
+		   >
+		   view
 		</a>
-		<a class="message-btn">message</a>
+		  <a 
+		   class="message-btn" 
+		   href="{% url 'init-message-room' i.id %}"
+		   >
+		   message
+		  </a>
 	      </div>
 	      <!-- btn container -->
 	</div>
