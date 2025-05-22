@@ -35,6 +35,9 @@ urlpatterns = [
         path('dashboard/',include('dashboard.urls')),
 
         # user profile
-        path('user_profile/',include('user_profile.urls'))
+        path('user_profile/',include('user_profile.urls')),
+
+        # chat
+        path('chat_room/',include('chat.urls'))
          
         ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

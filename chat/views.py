@@ -1,41 +1,23 @@
 import json
 from django.shortcuts import render,redirect
 
+from authentication.models import Worker
 from .models import ChannelGroup,Message
 
+
 # Create your views here.
-def get_index_page(request):
-    # load index page
+def get_chat_page(request,worker_id,room_guid):
+    # load chat page
     if request.method == 'GET':
-        return render(request,'chat/index.html')
+        # load all messages
+        worker = Worker.objects.get(id = worker_id)
+        user = request.user
 
-    # move to room
-    elif request.method == 'POST':
-        room_name = request.POST['room-name']
+        user_messages = list(user.channel_groups.get(channel_guid = room_guid).messages.all().values())
 
-        if room_name != '':
-            return redirect(f'room/{ room_name }')
-
-        else:
-            return render(request,'chat/index.html')
-
-
-def get_chat_room_page(request,room_name):
-    # clean up room_name for room_group_name in consumers
-    room_name = "-".join(room_name.split(' '))
-    
-    # get room
-    try:
-        channel_group = ChannelGroup.objects.get(channel_name = room_name)
-        
-    except ChannelGroup.DoesNotExist:
-        channel_group = ChannelGroup.objects.create(channel_name = room_name)
-    
-    # get msg history
-    messages = channel_group.messages.all().values()
-
-    # get room
-    return render(request,'chat/room.html',{ 
-                                            'room_name': room_name,
-                                            'messages': messages
-                                            })
+        context = {
+                'room_guid': room_guid,
+                'messages': user_messages,
+                'username': user.username
+                }
+        return render(request,'chat.html',context)

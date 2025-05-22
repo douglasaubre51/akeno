@@ -2,27 +2,16 @@ import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from asgiref.sync import sync_to_async
 
+from authentication.models import Account
 from .models import ChannelGroup,Message
 
 
 class CustomConsumer(AsyncWebsocketConsumer):
     async def connect(self):
-        # get room name from url
-        room_name = self.scope['url_route']['kwargs']['room_name']
+        # get room guid from url
+        self.room_guid = self.scope['url_route']['kwargs']['room_guid']
+        self.room_group_name = self.room_guid
 
-        # convert spaces to - for room_group_name since it doesn't like spaces!
-        room_name = "-".join(room_name.split(" "))
-
-        # get room or create room using db
-        try:
-            self.channel_group = await sync_to_async(ChannelGroup.objects.get)(channel_name = room_name)
-
-        except ChannelGroup.DoesNotExist:
-            self.channel_group = await sync_to_async(ChannelGroup.objects.create)(channel_name = room_name)
-
-        self.room_group_name = self.channel_group.channel_name
-
-        # add connection id to group
         await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
@@ -31,12 +20,21 @@ class CustomConsumer(AsyncWebsocketConsumer):
         # connect to websocket
         await self.accept()
 
+        self.account = None
+        self.channel_group = None
+
 
     async def receive(self,text_data):
-        # json package
+        # json payload
         json_text = json.loads(text_data)
         message = json_text['message']
         username = json_text['username']
+
+        if self.account is None:
+            self.account = await sync_to_async(Account.objects.get)(username = username)
+        
+        if self.channel_group is None:
+            self.channel_group = await sync_to_async(self.account.channel_groups.get)(channel_guid = self.room_guid)
 
         # save msg to db
         await sync_to_async(Message.objects.create)(
@@ -50,13 +48,16 @@ class CustomConsumer(AsyncWebsocketConsumer):
                 # message pipeline
                 self.room_group_name,
                 {
-                    'type':'send_message',
+                    'type':'sender',
                     'message':message,
                     'username':username
                     })
 
+        print(f'room name : {self.room_group_name}')
 
-    async def send_message(self,event):
+
+    async def sender(self,event):
+        print('sending message!')
         await self.send(text_data = json.dumps({ 
                                                 'message':event['message'],
                                                 'username':event['username']
