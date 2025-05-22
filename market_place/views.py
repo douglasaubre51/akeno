@@ -49,11 +49,12 @@ def init_message_room(request,worker_id):
                 room_guid = i['channel_guid']
 
                 return redirect(
-                        f'chat/?worker_id={worker_id}&room_guid={room_guid}'
+                        f'/chat_room/{worker_id}/{room_guid}/'
                         )
 
     # else create new room
-    # fetch all guids from db
+    # fetch all guids from db since users are few
+    # need to change this to repeated db calls when this hits prod!
     check_guid_list = ChannelGroup.objects.values_list('channel_guid')
 
     # check if guid already exists in db
@@ -71,7 +72,7 @@ def init_message_room(request,worker_id):
                     )
 
             return redirect(
-                    f'chat/?worker_id={worker_id}&room_guid={guid}'
+                    f'/chat_room/{worker_id}/{guid}/'
                     )
 
         print('again')
