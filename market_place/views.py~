@@ -1,26 +1,96 @@
 import datetime
+import uuid
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.db import IntegrityError
 
 from authentication.models import Account,Worker
+from chat.models import ChannelGroup
+
 
 # Create your views here.
-
 def get_current_time(request):
-
     current_time = datetime.datetime.now()
-
     html_string = '<html><body><h1>tik tok : %s</h1></body></html>' % current_time
 
     return HttpResponse(html_string)
 
 
 def get_worker_market_place(request):
-
     worker_model = Worker.objects.all()
-
     context = {
             'worker_model':worker_model
             }
 
-    return render(request,'worker_market_place.html',context)
+    return render(
+            request,
+            'worker_market_place.html',context
+            )
+
+
+def init_message_room(request,worker_id):
+    # get user and worker from db
+    worker_account = Account.objects.get(id = worker_id)
+    user_account = Account.objects.get(id = request.user.id)
+
+    # get all their guids now
+    worker_channel_groups = worker_account.channel_groups.all().values()
+    user_channel_groups = user_account.channel_groups.all().values()
+
+    room_guid = None
+
+    # search for matching guid
+    # if found go to get_chat_page in chat app
+    for i in worker_channel_groups:
+        for j in user_channel_groups:
+            if i['channel_guid'] == j['channel_guid']:
+                print(f'matching guid!')
+                print(f"{i['channel_guid']}")
+                room_guid = i['channel_guid']
+                init_channel_group(
+                        worker_account,
+                        user_account,
+                        room_guid
+                        )
+
+                return redirect(
+                        f'chat/?worker_id={worker_id}&room_guid={room_guid}'
+                        )
+
+    # else create new room
+    # fetch all guids from db
+    check_guid_list = ChannelGroup.objects.values_list('channel_guid')
+
+    # check if guid already exists in db
+    while True:
+        guid = str(uuid.uuid4())
+        result = check_guid_list.filter(channel_guid = guid)
+
+        if result.exists() is False:
+            print('creating room!')
+            #actually create the room here
+            init_channel_group(
+                    worker_account,
+                    user_account,
+                    guid
+                    )
+
+            return redirect(
+                    f'chat/?worker_id={worker_id}&room_guid={guid}'
+                    )
+
+        print('again')
+
+
+# create channel_group for user and worker
+def init_channel_group(worker_account, user_account,room_guid):
+    print(f' room guid : {room_guid}')
+    worker_group = ChannelGroup.objects.create(
+            channel_guid = room_guid,
+            account = worker_account
+            )
+
+    user_group = ChannelGroup.objects.create(
+            channel_guid = room_guid,
+            account = user_account
+            )
