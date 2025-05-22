@@ -7,10 +7,7 @@ from django.contrib.auth.models import AbstractUser
 from .choices import Status
 
 # Create your models here.
-
-
 class Account(AbstractUser):
-    
     class Meta:
         verbose_name = 'Account'
         verbose_name_plural = 'Accounts'
@@ -21,10 +18,10 @@ class Account(AbstractUser):
     state = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
 
-    profile_img = models.ImageField(upload_to = 'images/',blank = True,null = True)
+    profile_img = models.ImageField(upload_to = 'images/')
+
 
 class Worker(Account):
-    
     class Meta:
         verbose_name = 'Worker'
         verbose_name_plural = 'Workers'
