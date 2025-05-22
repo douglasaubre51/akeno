@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      worker chat room
+    </title>
+  </head>
+
+  <body>
+    <!-- meta data for js don't touch! -->
+    <input type='hidden' id='room-guid' value='{{ room_guid }}' />
+    <input type='hidden' id='username' value='{{ username }}' />
+
+    <h3>
+      welcome to room : {{ room_guid }}
+    </h3>
+
+    <!-- send msg -->
+    <span>
+      message :
+    </span>
+    <input
+	type='text'
+	id='msg-box'
+	/>
+    <button id='send-btn'>
+      send
+    </button>
+
+    <!-- messages inside -->
+    <div id='msg-container'>
+      {% if messages %}
+      	{% for i in messages %}
+	<span class='msg-body'>
+	  {{ i.text }}
+	</span>
+	{% endfor %}
+	{% endif %}
+    </div>
+
+  </body>
+
+  <script src="{% static 'js/chat.js' %}" defer></script>
+</html>
