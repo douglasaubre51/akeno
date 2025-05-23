@@ -1,4 +1,5 @@
 import json
+import datetime
 from channels.generic.websocket import AsyncWebsocketConsumer
 from asgiref.sync import sync_to_async
 
@@ -7,6 +8,9 @@ from .models import ChannelGroup,Message
 
 
 class CustomConsumer(AsyncWebsocketConsumer):
+    account = None
+    channel_group = None
+
     async def connect(self):
         # get room guid from url
         self.room_guid = self.scope['url_route']['kwargs']['room_guid']
@@ -20,9 +24,6 @@ class CustomConsumer(AsyncWebsocketConsumer):
         # connect to websocket
         await self.accept()
 
-        self.account = None
-        self.channel_group = None
-
 
     async def receive(self,text_data):
         # json payload
@@ -32,16 +33,18 @@ class CustomConsumer(AsyncWebsocketConsumer):
 
         if self.account is None:
             self.account = await sync_to_async(Account.objects.get)(username = username)
-        
+
         if self.channel_group is None:
             self.channel_group = await sync_to_async(self.account.channel_groups.get)(channel_guid = self.room_guid)
 
         # save msg to db
-        await sync_to_async(Message.objects.create)(
+        model = await sync_to_async(Message.objects.create)(
                 channel_group = self.channel_group,
                 sender_name = username,
                 text = message
                 )
+
+        time = model.sent_at.strftime('%Y-%m-%d  %H:%M')
 
         # send to all groups
         await self.channel_layer.group_send(
@@ -50,7 +53,8 @@ class CustomConsumer(AsyncWebsocketConsumer):
                 {
                     'type':'sender',
                     'message':message,
-                    'username':username
+                    'username':username,
+                    'time':time
                     })
 
         print(f'room name : {self.room_group_name}')
@@ -60,5 +64,6 @@ class CustomConsumer(AsyncWebsocketConsumer):
         print('sending message!')
         await self.send(text_data = json.dumps({ 
                                                 'message':event['message'],
-                                                'username':event['username']
+                                                'username':event['username'],
+                                                'time':event['time']
                                                 }))
