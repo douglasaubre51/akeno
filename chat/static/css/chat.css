@@ -10,6 +10,23 @@ textarea {
 textarea[type="text"]:focus {
 }
 
+a{
+  color:silver;
+  border:none;
+  text-decoration:none;
+}
+a:hover{
+  color:green;
+}
+
+#go-to-market_place{
+  position:fixed;
+  left:10px;
+  top:10px;
+
+  font-size:40px;
+}
+
 /* messages area */
 #msg-container {
   background-color: whitesmoke;
