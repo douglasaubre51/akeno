@@ -26,7 +26,7 @@ urlpatterns = [
         path('admin/', admin.site.urls),
 
         # market place urls
-        path('market_place/',include('market_place.urls')),
+        path('market_place/',include('market_place.urls'),name = 'market_place'),
 
         # login
         path('',include('authentication.urls')),
