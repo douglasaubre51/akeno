@@ -1,6 +1,6 @@
 "use strict";
-
 console.log("starting ui.js!");
+
 
 // highlight individual tab buttons in content card
 const workers_btn = document.getElementById("workers-btn");
@@ -23,3 +23,16 @@ projects_btn.addEventListener("click", function () {
   workers_btn.classList.remove("active-nav-btn");
   projects_btn.classList.add("active-nav-btn");
 });
+
+// websocket for notifications
+//const roomGuid = '8c5eae9a-0455-440a-a15f-13164084c32e'
+//const ws = new WebSocket(
+//  'ws://' + window.location.host + '/dashboard/' + roomGuid +'/'
+//)
+//
+//ws.onopen = function(){
+//  console.log('websocket connected!')
+//}
+//ws.onclose = function(){
+//  console.log('websocket disconnected!')
+//}
