@@ -1,6 +1,7 @@
 import json
 import datetime
 from channels.generic.websocket import AsyncWebsocketConsumer
+from channels.layers import get_channel_layer
 from asgiref.sync import sync_to_async
 
 from authentication.models import Account
@@ -46,9 +47,8 @@ class CustomConsumer(AsyncWebsocketConsumer):
 
         time = model.sent_at.strftime('%Y-%m-%d  %H:%M')
 
-        # send to all groups
+        # message pipeline
         await self.channel_layer.group_send(
-                # message pipeline
                 self.room_group_name,
                 {
                     'type':'sender',
@@ -57,11 +57,20 @@ class CustomConsumer(AsyncWebsocketConsumer):
                     'time':time
                     })
 
-        print(f'room name : {self.room_group_name}')
+        # dashboard notification pipeline
+#        dashboard_layer = await sync_to_async(get_channel_layer)()
+#        await dashboard_layer.group_send(
+#                self.room_group_name,
+#                {
+#                    'type': 'user_send_notification',
+#                    'message': message,
+#                    'username': username,
+#                    'time': time
+#                    }
+#                )
 
 
     async def sender(self,event):
-        print('sending message!')
         await self.send(text_data = json.dumps({ 
                                                 'message':event['message'],
                                                 'username':event['username'],
