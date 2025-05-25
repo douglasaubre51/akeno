@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'authentication',
     'dashboard',
     'user_profile',
-    'chat'
-
+    'chat',
+    'worker_dashboard'
 ]
 
 MIDDLEWARE = [

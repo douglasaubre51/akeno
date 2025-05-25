@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'dashboard',
     'user_profile',
     'chat',
-    'worker_dashboard'
+    'worker_dashboard',
+    'project_marketplace'
 ]
 
 MIDDLEWARE = [
