@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'daphne',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,8 +46,8 @@ INSTALLED_APPS = [
     'authentication',
     'dashboard',
     'user_profile',
-    'chat'
-
+    'chat',
+    'worker_dashboard'
 ]
 
 MIDDLEWARE = [
