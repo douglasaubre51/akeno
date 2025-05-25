@@ -1,24 +1,26 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title>
-      Worker dashboard
-    </title>
-    <link
-	rel='stylesheet'
-	href="{% static 'css/worker-dashboard.css' %}"
-	/>
+    <title>Worker dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/worker-dashboard.css' %}" />
   </head>
   <body>
+    <h1>Worker Dashboard</h1>
 
-    <div id='container'>
-      <div id='content-card'>
+    <div id="container">
+      <div id="content-card">
+        <div id="tag-container">
+          <span id="chats-tag"> Chats </span>
+          <span id="projects-tag"> Projects </span>
+        </div>
+        <!-- tag container -->
       </div>
+      <!-- content card -->
 
-      <div id='notification-card'>
-      </div>
+      <div id="notification-card"></div>
+      <!-- notification card -->
     </div>
-
   </body>
+  <script src="{% static 'js/worker-dashboard.js' %}" defer></script>
 </html>
