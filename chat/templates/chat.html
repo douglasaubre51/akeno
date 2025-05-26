@@ -1,45 +1,43 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title>
-      worker chat room
-    </title>
+    <title>worker chat room</title>
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+    />
   </head>
-
   <body>
     <!-- meta data for js don't touch! -->
-    <input type='hidden' id='room-guid' value='{{ room_guid }}' />
-    <input type='hidden' id='username' value='{{ username }}' />
+    <input type="hidden" id="room-guid" value="{{ room_guid }}" />
+    <input type="hidden" id="username" value="{{ username }}" />
 
-    <h3>
-      welcome to room : {{ room_guid }}
-    </h3>
+    <div id="chat-room-body">
+      <a
+        href="{% url 'market_place' %}"
+        id="go-to-market_place"
+        class="material-symbols-rounded"
+        >arrow_back</a
+      >
 
-    <!-- send msg -->
-    <span>
-      message :
-    </span>
-    <input
-	type='text'
-	id='msg-box'
-	/>
-    <button id='send-btn'>
-      send
-    </button>
+      <!-- messages inside -->
+      <div id="msg-container">
+        {% if messages %} {% for i in messages %}
+        <pre class="msg-body"> {{ i.text }} </pre>
+        <span class="sender-body">{{ i.sender_name }} | {{ i.sent_at }} </span>
+        {% endfor %} {% endif %}
+      </div>
 
-    <!-- messages inside -->
-    <div id='msg-container'>
-      {% if messages %}
-      	{% for i in messages %}
-	<span class='msg-body'>
-	  {{ i.text }}
-	</span>
-	{% endfor %}
-	{% endif %}
+      <!-- send msg -->
+      <div id="send-msg-container">
+        <div id="send-msg-body">
+          <textarea id="msg-box" placeholder="enter a message"></textarea>
+          <button class="material-symbols-rounded" id="send-btn">send</button>
+        </div>
+      </div>
     </div>
-
   </body>
-
   <script src="{% static 'js/chat.js' %}" defer></script>
 </html>

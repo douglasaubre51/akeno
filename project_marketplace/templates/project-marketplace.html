@@ -1,0 +1,37 @@
+{% load static %}
+
+<!doctype html>
+
+<html>
+  <head>
+    <title>Project marketplace</title>
+
+    <link rel="stylesheet" href="{% static 'css/project-marketplace.css' %}" />
+  </head>
+
+  <body>
+    <div id="main-container">
+      <div id="project-container">
+        {% for i in projects %}
+        <div class="project-card">
+          <span class="title"> {{ i.title }} </span>
+          <span class="description"> {{ i.short_description }} </span>
+          <span class="no-of-days"> finish in: {{ i.no_of_days }} days </span>
+          <span class="project_expiry_date">
+            expires on: {{ i.project_expiry_date }}
+          </span>
+          <span class="reward"> reward: {{ i.reward }} Rs </span>
+          <span class="status"> status: {{ i.status }} </span>
+
+          <div class="btn-group">
+            <span class="view-btn"> view </span>
+          </div>
+        </div>
+        <!-- project card -->
+        {% endfor %}
+      </div>
+      <!-- project container -->
+    </div>
+    <!-- main container -->
+  </body>
+</html>

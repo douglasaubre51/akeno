@@ -12,4 +12,4 @@ class TwoWayLogin(LoginView):
         except Worker.DoesNotExist:
             return '/dashboard/'
 
-        return '/worker-dashboard/'
+        return '/worker_dashboard/'

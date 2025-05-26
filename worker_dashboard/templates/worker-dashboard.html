@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <title>Worker dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/worker-dashboard.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+    />
+  </head>
+  <body>
+    <a id="go-to-login" class="material-symbols-rounded" href="/">
+      arrow_back
+    </a>
+
+    <h1>Worker dashboard</h1>
+
+    <a href="{% url 'project_marketplace' %}" id="go-to-project-marketplace">
+      Project marketplace
+    </a>
+
+    <div id="container">
+      <div id="content-card">
+        <div id="tag-container">
+          <span id="chats-tag"> Chats </span>
+          <span id="projects-tag"> Projects </span>
+        </div>
+        <!-- tag container -->
+      </div>
+      <!-- content card -->
+
+      <div id="notification-card">
+        <div id="notification-tag-container">
+          <span> notifications </span>
+        </div>
+      </div>
+      <!-- notification card -->
+    </div>
+  </body>
+  <script src="{% static 'js/worker-dashboard.js' %}" defer></script>
+</html>

@@ -38,6 +38,12 @@ urlpatterns = [
         path('user_profile/',include('user_profile.urls')),
 
         # chat
-        path('chat_room/',include('chat.urls'))
+        path('chat_room/',include('chat.urls')),
+
+        # worker_dashboard
+        path('worker_dashboard/',include('worker_dashboard.urls')),
+
+        # project marketplace
+        path('project_marketplace/',include('project_marketplace.urls'))
          
         ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
