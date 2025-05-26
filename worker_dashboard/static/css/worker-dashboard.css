@@ -4,7 +4,7 @@
   --ash-grey: #b2beb5;
   --white: #e0e0e0;
   --green: #b5e2b8;
-  --purple:#c5a5d7;
+  --purple: #c5a5d7;
 }
 
 * {
@@ -30,31 +30,31 @@ span {
   color: var(--ash-grey);
 }
 
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
 }
 
-#go-to-login{
-  margin:5px 0px 0px 10px;
-  font-size:30px;
-  color:var(--ash-grey);
+#go-to-login {
+  margin: 5px 0px 0px 10px;
+  font-size: 30px;
+  color: var(--ash-grey);
 }
-#go-to-login:hover{
-  color:var(--green);
+#go-to-login:hover {
+  color: var(--green);
 }
 
-#go-to-project-marketplace{
-  margin:10px 0px 10px 40px;
+#go-to-project-marketplace {
+  margin: 10px 0px 10px 40px;
 
-  color:var(--purple);
-  border:1px solid var(--purple);
+  color: var(--purple);
+  border: 1px solid var(--purple);
 
-  border-radius:10px;
-  padding:10px 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
 }
-#go-to-project-marketplace:hover{
-  color:black;
-  background-color:var(--purple);
+#go-to-project-marketplace:hover {
+  color: black;
+  background-color: var(--purple);
 }
 
 #container {
