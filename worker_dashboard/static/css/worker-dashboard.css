@@ -1,0 +1,110 @@
+:root {
+  --dark-grey: #222222;
+  --light-grey: #323232;
+  --ash-grey: #b2beb5;
+  --white: #e0e0e0;
+  --green: #b5e2b8;
+  --purple: #c5a5d7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: var(--dark-grey);
+}
+
+h1 {
+  color: var(--green);
+
+  margin: 20px 40px;
+
+  font-size: 70px;
+}
+
+span {
+  color: var(--ash-grey);
+}
+
+a {
+  text-decoration: none;
+}
+
+#go-to-login {
+  margin: 5px 0px 0px 10px;
+  font-size: 30px;
+  color: var(--ash-grey);
+}
+#go-to-login:hover {
+  color: var(--green);
+}
+
+#go-to-project-marketplace {
+  margin: 10px 0px 10px 40px;
+
+  color: var(--purple);
+  border: 1px solid var(--purple);
+
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+#go-to-project-marketplace:hover {
+  color: black;
+  background-color: var(--purple);
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  margin: 60px 40px 0px 40px;
+}
+
+#content-card {
+  background-color: var(--light-grey);
+
+  min-width: 500px;
+  min-height: 420px;
+
+  border-radius: 14px;
+
+  flex-grow: 1;
+}
+
+/* header tabs */
+#tag-container {
+  margin: 20px 0px;
+}
+#tag-container span {
+  margin-left: 30px;
+  padding: 10px;
+}
+#chats-tag:hover {
+  color: var(--green);
+  cursor: pointer;
+}
+#projects-tag:hover {
+  color: var(--green);
+  cursor: pointer;
+}
+.active-tag {
+  color: var(--green);
+  border-bottom: 1px solid var(--green);
+}
+
+#notification-card {
+  background-color: var(--light-grey);
+
+  min-width: 300px;
+  min-height: 420px;
+
+  border-radius: 14px;
+}
+#notification-tag-container {
+  margin: 10px 13px;
+}

@@ -1,0 +1,59 @@
+:root {
+  --dark-grey: #222222;
+  --light-grey: #323232;
+  --ash-grey: #b2beb5;
+  --white: #e0e0e0;
+  --green: #b5e2b8;
+  --purple: #c5a5d7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-grey);
+  color: var(--ash-grey);
+}
+
+#main-container {
+  margin: 20px;
+}
+
+.project-card {
+  background-color: var(--light-grey);
+
+  width: 500px;
+  height: 250px;
+
+  border-radius: 5px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.title {
+  color: var(--green);
+
+  margin-bottom: 10px;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+.btn-group {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.view-btn {
+  background-color: var(--green);
+  color: var(--dark-grey);
+
+  padding: 5px 20px;
+
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
