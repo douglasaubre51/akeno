@@ -12,6 +12,7 @@ a {
 i {
   cursor: pointer;
 }
+
 i:hover {
   color: white;
 }
@@ -23,7 +24,8 @@ img {
   border-radius: 15px;
 }
 
-#user-profile-body {
+
+.user-profile-body {
   height: 100%;
   width: 100%;
 
@@ -32,14 +34,14 @@ img {
   gap: 20px;
 }
 
-#details-container {
+.details-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-#qualifications {
+.qualifications {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 100px;
 }

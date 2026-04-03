@@ -15,3 +15,18 @@ def get_project_marketplace_page(request):
             'project-marketplace.html',
             context
             )
+
+
+def view_selected_project(request, project_id):
+    print(project_id)
+    project = Project.objects.get(id = project_id)
+
+    context = {
+        'project': project
+    }
+
+    return render(
+        request,
+        'view-project.html',
+        context
+    )

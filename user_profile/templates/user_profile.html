@@ -11,13 +11,13 @@
     ><i id="arrow-back" class="material-icons">arrow_back</i></a
   >
 
-  <img id="profile-img" src="{{user.profile_img.url}}" loading="lazy" />
+  <img style="width:min-content" class="profile-img" src="{{user.profile_img.url}}"  />
 
-  <div id="user-details-container">
-    <div id="details-container">
+  <div class="user-details-container">
+    <div class="details-container">
       <h1>{{user.first_name}} {{user.last_name}}</h1>
 
-      <ul id="qualifications">
+      <ul class="qualifications">
         <li>{%if user.q1 is not None %} {{user.q1}} {% endif %}</li>
         <li>{%if user.q2 is not None %} {{user.q2}} {% endif %}</li>
         <li>{%if user.q3 is not None %} {{user.q3}} {% endif %}</li>

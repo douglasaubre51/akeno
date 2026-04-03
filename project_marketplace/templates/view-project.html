@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+    <title>Project: {{ project.title }}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=currency_rupee" />
+    <link href="{% static 'css/view-project.css' %}" rel='stylesheet' />
+
+    <body>
+            <div class='title-bar'>
+                <span class='title'>{{ project.title }}</span>
+            </div>
+
+            <div class='details-card'>
+                <div class='details'>
+                    <span class='label'>Description</span>
+                    <span class='desc'>{{ project.description }}</span>
+
+                    <div class='extra-details'>
+                        <div class='extra-detail-contain'>
+                            <span>Starting price : </span>
+                            <span class="material-symbols-outlined">
+                                currency_rupee
+                            </span>
+
+                            <span style='font-size:20px' class='detail'>{{ project.reward }}</span>
+                        </div>
+
+                        <span class='detail'>Current status : {{ project.status }}</span>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

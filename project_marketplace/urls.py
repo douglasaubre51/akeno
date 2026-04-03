@@ -4,5 +4,6 @@ from . import views
 
 
 urlpatterns = [
-        path('',views.get_project_marketplace_page,name='project_marketplace')
+        path('',views.get_project_marketplace_page,name='project_marketplace'),
+        path('project/<int:project_id>',views.view_selected_project, name='project_details')
         ]

@@ -20,6 +20,23 @@ body {
 
 #main-container {
   margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.hero-tag {
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .project-card {
@@ -36,6 +53,7 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+
 .title {
   color: var(--green);
 
@@ -44,16 +62,16 @@ body {
   font-size: 30px;
   font-weight: 900;
 }
+
 .btn-group {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .view-btn {
   background-color: var(--green);
   color: var(--dark-grey);
 
   padding: 5px 20px;
-
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-radius: 4px;
 }
